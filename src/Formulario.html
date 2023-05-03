@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>GTI-Formulario Contacto</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/header.js" defer></script>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+<!----------------------------------------->
+<!---------Inicio seccion cabecera--------->
+<!----------------------------------------->
+
+<header>
+    <nav id="menu-principal">
+        <div class="logo-wrapper">
+            <a href="#menu-principal"><img src="../img/logo.jpeg" alt="Imagen_logo" id="imagen_logo"></a>
+            <a href="#menu-principal"><img src="../img/user.png" alt="Imagen_user" id="imagen_user"></a>
+        </div>
+        <ul>
+            <h1>Menu</h1>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#seccion2">Nosotros</a></li>
+            <li><a href="#seccion3">Hidorponia</a></li>
+            <li><a href="#seccion4">Servicios</a></li>
+            <li><a href="#seccion5">FAQ</a></li>
+            <li><a href="#">Conatacta</a></li>
+        </ul>
+        <div class="hamburguesa">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+</header>
+
+<!----------------------------------------->
+<!----------Fin seccion cabecera----------->
+<!----------------------------------------->
+<!----------------------------------------->
+<!------inicio seccion Formulario---------->
+<!----------------------------------------->
+
+<main class="Formulario">
+
+    <h1>Datos personales</h1>
+
+    <div>
+
+        <h2>*Nombre:</h2>
+
+        <input type="text" name="nombre" required>
+
+    </div>
+
+    <div>
+
+        <h2>*Correo electrónico:</h2>
+
+        <input type="email" name="correo" required>
+
+    </div>
+
+    <div>
+
+        <h2>Teléfono:</h2>
+
+        <input type="tel" name="telefono">
+
+    </div>
+
+    <div>
+
+        <h2>*Codigo postal:</h2>
+        
+        <input type="text" name="codigo-postal" required>
+        
+    </div>
+    <div>
+
+        <h2>*Información adicional:</h2>
+
+        <textarea type="text" name="Informacion-adicional" required id="ad-info" cols="43" rows="5"></textarea>
+    </div>
+    <div>
+        <input type="button" value="ENVIAR" id="boton_formulario">
+    </div>
+</main>
+<!----------------------------------------->
+<!----------Fin seccion Formulario--------->
+<!----------------------------------------->
+
+<!----------------------------------------->
+<!----------inicio seccion footer---------->
+<!----------------------------------------->
+<section class="footer-form">
+    <h2>&#169 Copyright 2023 All Rights Reserved</h2>
+</section>
+<!----------------------------------------->
+<!-----------Fin seccion footer------------>
+<!----------------------------------------->
+
+</body>
+</html>

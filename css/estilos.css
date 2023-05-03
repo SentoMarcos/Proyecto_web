@@ -1,0 +1,683 @@
+@charset "UTF-8";
+@import url(//db.onlinewebfonts.com/c/1ba82d324736a8a9d4327d482c4627c4?family=Ebrima);
+@import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant&family=Ruda:wght@500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/codec-pro');
+
+:root {/*variables de tipo estilo*/
+    --mor-osc: #682155;
+    --mor-cla: #820053;
+    --verd-cla: #40916c;
+    --verd-osc: #2d6a4f;
+    --bla-le: #ffffff;
+    --neg-le: #111111;
+    --menu-height: 3rem;
+}
+/*Estilos aplicados de forma general*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: inherit;/*inherit = heredar*/
+
+}
+
+/*Estilos generales para el apartado html*/
+html {
+    scroll-behavior: smooth;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/*Estilos generales para el apartado header*/
+header {
+    height: 0;
+    background-color: var(--bla-le);
+    border-bottom: 1px black solid;
+}
+
+/*Estilos generales para el apartado body*/
+body {
+    font-family: Roboto,sans-serif;
+    background-color: var(--bla-le);/*uso de las variables de root*/
+    color: var(--neg-le);
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+}
+
+/*Estilos generales para el apartado main*/
+main {
+    height: 100vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    z-index: -1;
+    min-width: 375px;
+    min-height: 585px;
+}
+
+/*Estilos generales para el apartado footer*/
+.footer{
+    background-color: var(--mor-osc);
+    color: var(--neg-le);
+    height: var(--menu-height);
+    width: 100%;
+    border-top: black 1px solid;
+    position: absolute;
+    top: 200%;
+    z-index: -1
+}
+
+/**********************************************************/
+/**************Inicio estilos index-header*****************/
+/**********************************************************/
+
+/*Definicion de elementos de menu el menu*/
+#menu-principal{
+    --menu-height: 3rem;
+}
+
+/*Estilos para la seccion de menu-principal*/
+#menu-principal {
+    background-color: var(--bla-le);
+    color: var(--neg-le);
+    height: var(--menu-height);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding: 0.5em;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: black 1px solid;
+}
+
+/*Estilos para las ul de menu-principal*/
+#menu-principal ul {
+    background-color: var(--bla-le);
+    position: absolute;
+    top:var(--menu-height);
+    border-left: 1px black solid;
+    right: 0;
+    width: 75%;
+    transform:translateX(50%) scaleX(0);
+    transition: .5s;
+    height:100em;
+}
+
+/*Estilos para las ul activas de menu-principal*/
+#menu-principal.active ul {
+    transform: translateX(0) scaleX(1);
+}
+
+/*Estilos para las li de menu-principal*/
+#menu-principal li {
+    color: var(--neg-le);
+    background-color: transparent;
+    position: relative;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+/*Estilos para las li cunando el raton esta se encuentra arriba de el boton de menu-principal*/
+#menu-principal li::after{
+    display: block;
+    background-color: var(--mor-osc);
+    width: 100%;
+    left: 0;
+    transform-origin: bottom left;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    transform: scaleX(0);
+    transition: .3s ease;
+    content: "";
+}
+
+/*Estilos para las li con el hover activo de menu-principal*/
+#menu-principal li:hover::after{
+    transform: scaleX(1);
+}
+
+/*Estilos para el boton del menu desplegable del header*/
+.hamburguesa {
+    width: 2em;
+    height: 2em;
+}
+
+/*Estilos para el div del menu desplegable del header*/
+.hamburguesa div {
+    background-color: var(--mor-cla);
+    width: 2em;
+    height: .3em;
+    margin: 0.3em auto;
+    transition: .5s;
+}
+#menu-principal ul {
+    padding-top: 100px;
+}
+#menu-principal ul h1 {
+    font-family: Assistant;
+    position: absolute;
+    left: 10px;
+    top: 50px;
+    font-size: 24px;
+    font-weight: bold;
+}
+#menu-principal ul li a{
+    font-family: Ebrima;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 16px;
+}
+
+/*Estilos para la transformacion de 3 lineas a 2 del boton del menu desplegable del header*/
+#menu-principal.active .hamburguesa div:nth-child(2) {
+    opacity: 0;
+}
+/*Estilos para la transformacion de 3 lineas a 2 del boton del menu desplegable del header*/
+#menu-principal.active .hamburguesa div:nth-child(1) {
+    transform: translateY(.6em) rotate(45deg);
+    background-color: var(--mor-osc);
+}
+/*Estilos para la transformacion de 3 lineas a 2 del boton del menu desplegable del header*/
+#menu-principal.active .hamburguesa div:nth-child(3) {
+    transform: translateY(-.6em) rotate(-45deg);
+    background-color: var(--mor-osc);
+}
+/*Estilos para el logo del header*/
+.logo-wrapper {
+    display: flex;
+    justify-content: left;
+    height: var(--menu-height);
+    flex: 1;
+}
+/*Estilos para el logo del header*/
+.logo-wrapper a {
+    display: block;
+    height: 100%;
+}
+/*Estilos para el logo del header*/
+.logo-wrapper img {
+    height: 99%;
+    width: auto;
+    max-width: 100%;
+}
+#imagen_user{
+    position: absolute;
+    right: 55px;
+    height: 90%;
+    margin-top: 3.5px;
+    filter: chroma();
+}
+
+/**********************************************************/
+/****************Fin estilos index-header******************/
+/**********************************************************/
+
+/**********************************************************/
+/***********Inicio estilos index-presentacion**************/
+/**********************************************************/
+
+/*Estilos de la seccion presentacion*/
+.presentacion {
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+/*Estilos de la seccion presentacion-h1*/
+.presentacion h1 {
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    margin: 10px;
+    font-family: ruda;
+}
+/*Estilos de la seccion presentacion-h2*/
+.presentacion h2 {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 35px;
+    font-family: Assistant;
+    font-weight: normal;
+}
+
+/*Estilos de la seccion presentacion-button*/
+.presentacion button {
+    background-color: #820053;
+    border:var(--neg-le) 1px solid;
+    color: white;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    height: 45px;
+    width: 144px;
+    font-size: 26px;
+}
+/**********************************************************/
+/*************Fin estilos index-presentacion***************/
+/**********************************************************/
+
+/**********************************************************/
+/*************Inicio estilos index-carrusel****************/
+/**********************************************************/
+
+/*Estilos de la seccion carrusel*/
+.carrusel {
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    padding: 10px;
+    filter: brightness(45%);
+}
+
+/*Estilos de la seccion carrusel-img*/
+.carrusel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+}
+
+/*Estilos de la seccion carrusel-img cuando estan acitvas*/
+.carrusel img.active {
+    opacity: 1;
+}
+/*Estilos de la seccion-div-carrusel-flechas*/
+#flecha_carrusel{
+    width: 95%;
+    height: 100px;
+    margin-left: 2%;
+
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 9px 9px 0;
+    display: inline-block;
+    padding: 3px;
+    width: 32px;
+    height: 32px;
+    filter: opacity(61%);
+    border-radius: 5px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    float: right;
+}
+
+.left {
+    transform: rotate(135deg);
+    float: left;
+    left: 10px;
+}
+
+.down {
+    transform: rotate(45deg);
+    width: 32px;
+    height: 32px;
+    margin-left: 46%;
+    filter: opacity(61%);
+    border: solid white;
+    border-width: 0 9px 9px 0;
+    position: relative;
+    bottom: -70px;
+}
+/**********************************************************/
+/**************Fin estilos index-carrusel******************/
+/**********************************************************/
+
+/**********************************************************/
+/*************inicio estilos index-ejemplo*****************/
+/**********************************************************/
+.ejemplo{
+    height: 584px;
+    width: 100%;
+    min-width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    z-index: -1;
+}
+
+.ejemplo img{
+    position: absolute;
+    z-index: -1;
+    height: 103%;
+    max-width: 100%;
+    filter: contrast(0.5) brightness(1.6);
+}
+
+.ejemplo h2{
+    color: #820053;
+    text-align: center;
+    margin-top: 100px;
+    font-weight: normal;
+    font-family: Assistant;
+}
+/**********************************************************/
+/**************Fin estilos index-ejemplo*******************/
+/**********************************************************/
+
+/**********************************************************/
+/******************Inicio estilos footer*******************/
+/**********************************************************/
+
+.footer h2{
+    text-align: center;
+    color:white;
+    margin-top: 17px;
+    font-size: 12px;
+    font-family: Ebrima;
+    font-weight: normal;
+}
+
+.footer-form{
+    background-color: var(--mor-osc);
+    color: var(--neg-le);
+    height: var(--menu-height);
+    width: 100%;
+    border-top: black 1px solid;
+    position: absolute;
+    top: 100%;
+    z-index: -1
+}
+
+.footer-form h2{
+    text-align: center;
+    color:white;
+    margin-top: 17px;
+    font-size: 12px;
+    font-family: Ebrima;
+    font-weight: normal;
+}
+
+/**********************************************************/
+/********************Fin estilos footer********************/
+/**********************************************************/
+
+/**********************************************************/
+/*****************Inicio estilos formulario****************/
+/**********************************************************/
+
+.Formulario{
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    left: 8%;
+    right: 8%;
+    min-width: 300px;
+}
+
+.Formulario input{
+    border: #820053 solid 1px;
+    border-radius: 10px;
+    width: 334px;
+    height: 38px;
+}
+
+.Formulario h1{
+    font-family: "Codec Pro";
+    font-size: 22px;
+    color: #797979;
+    font-weight: normal;
+}
+
+.Formulario h2{
+    font-family: "Assistant";
+    font-size: 13px;
+    color: #797979;
+    font-weight: normal;
+    padding-top: 10px;
+
+}
+
+#boton_formulario{
+    height: 43px;
+    width: 125px;
+    margin-top: 28px;
+    position: absolute;
+    margin-left: 102px;
+    font-family: Ebrima;
+    font-size: 18px;
+    background-color: #892260;
+    color: white;
+}
+
+#ad-info{
+    height: 152px;
+    box-sizing: border-box;
+    resize: none;
+    text-align: start;
+    display: flex;
+    justify-content: flex-start;
+}
+/**********************************************************/
+/*******************Fin estilos formulario*****************/
+/**********************************************************/
+
+
+/**********************************************************/
+/***************+**Inicio estilos Nosotros*****************/
+/**********************************************************/
+
+.Nosotros_Descripción{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 60px;
+    z-index: -1;
+}
+
+.Nosotros_Descripción h1{
+    position: relative;
+    font-size: 30px;
+    font-family: "Codec Pro";
+    color: #2D6A4F;
+    margin-bottom: 10px;
+    border-bottom: #820053 solid 1px;
+    text-align: center;
+    box-sizing:content-box;
+    margin-right: 35%;
+    margin-left: 32%;
+    margin-top: 10px;
+    min-width: 161px;
+}
+.Vision_de_la_empresa{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 77px;
+    z-index: -1;
+}
+
+.Vision_de_la_empresa h1{
+    position: relative;
+    font-size: 30px;
+    font-family: "Codec Pro";
+    color: #2D6A4F;
+    margin-bottom: 10px;
+    border-bottom: #820053 solid 1px;
+    text-align: center;
+    box-sizing:content-box;
+    margin-right: 35%;
+    margin-left: 32%;
+    margin-top: 10px;
+    min-width: 161px;
+}
+
+.Nosotros_Descripción img,.Vision_de_la_empresa img{
+    width: 325px;
+    height: 224px;
+    margin-inline: 30px;
+    box-shadow: 4px 2px 0.5pc rgba(0, 0, 0, 0.52);
+    margin-top: 10px;
+}
+
+.Vision_de_la_empresa p,.Por_qué_elegirnos p,.Nosotros_Descripción p{
+    text-align: center;
+    margin: 10px;
+    font-family: Ebrima;
+    font-size: 13px;
+    min-width: 370px;
+}
+
+.Por_qué_elegirnos{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 77px;
+    z-index: -1;
+}
+
+.Por_qué_elegirnos h1{
+    position: relative;
+    font-size: 30px;
+    font-family: "Codec Pro";
+    color: #2D6A4F;
+    margin-bottom: 10px;
+    border-bottom: #820053 solid 1px;
+    text-align: center;
+    box-sizing:content-box;
+    margin-right: 35%;
+    margin-left: 32%;
+    min-width: 161px;
+}
+
+.Por_qué_elegirnos div{
+    background-color: white;
+    border: #682155 solid 2px;
+    margin-bottom: 20px;
+    display: grid;
+    margin-inline: 35px;
+}
+
+.Por_qué_elegirnos h2{
+    font-size: 16px;
+    font-family: Assistant;
+    font-weight: bold;
+    justify-self: center;
+    position: relative;
+    bottom: 33px;
+}
+
+.Por_qué_elegirnos img{
+    width: 65px;
+    height: 68px;
+    position: relative;
+    top: 10px;
+    left: 3px;
+}
+
+.footer-nosotros{
+    background-color: var(--mor-osc);
+    color: var(--neg-le);
+    height: var(--menu-height);
+    width: 100%;
+    border-top: black 1px solid;
+    z-index: -1
+}
+
+.footer-nosotros h2{
+    text-align: center;
+    color:white;
+    margin-top: 17px;
+    font-size: 12px;
+    font-family: Ebrima;
+    font-weight: normal;
+}
+
+/**********************************************************/
+/*******************Fin estilos nosotros*******************/
+/**********************************************************/
+
+
+/**********************************************************/
+/*****************Inicio estilos ContactaP*****************/
+/**********************************************************/
+.Contacto_Pronto{
+    display: grid;
+    flex-direction: column;
+    position: relative;
+    top: 60px;
+    z-index: -1;
+}
+
+.Contacto_Pronto img{
+    width: 146px;
+    height: 146px;
+    position: relative;
+    justify-self: center;
+    margin-top: 85px;
+}
+
+.Contacto_Pronto h1{
+    text-align: center;
+    font-family: "Codec Pro";
+    font-size: 28px;
+    color: #820053;
+}
+
+.Contacto_Pronto p{
+    text-align: center;
+    font-family: Assistant;
+    font-size: 20px;
+    color: #333333;
+    margin-top: 10px;
+}
+
+#more_info{
+    text-align: center;
+    font-family: Assistant;
+    font-size: 16px;
+    margin-top: 67px;
+    color: #333333;
+}
+
+.Contacto_Pronto span{
+    color: #820053;
+}
+
+.footer-contacta{
+    background-color: var(--mor-osc);
+    color: var(--neg-le);
+    height: var(--menu-height);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-top: black 1px solid;
+    z-index: -1
+}
+
+.footer-contacta h2{
+    text-align: center;
+    color:white;
+    margin-top: 17px;
+    font-size: 12px;
+    font-family: Ebrima;
+    font-weight: normal;
+}
